@@ -1,26 +1,42 @@
-<h1>Users#show</h1>
-  <!--ログイン後のほぼ共通パーツ　ここから-->
-  <p>名前：<%= @user.name %></p>
-  <p>自己紹介：<%= @user.introduction %></p>
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <!--試したこと　size: "100x100"-->
-  
-    <% if @user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <% end %>
-  
-<h2>New book</h2>
-<%= form_with model: @book, local:true do |f| %>
-  <div>
-    <label>Title</label>
-    <<%= f.text_field :title %>
-  </div>
-  <div>
-    <label>Opinion </label>
-    <%= f.text_area :body %>
-  </div>
-  <%= f.submit '投稿' %>
-<% end %>
+<main>
+<dev class="container px-5 px-sm-0">
+  <dev class="row">
+   <dev class="col-md-3">
+     <%= render partial: 'users/sidebar', locals: { user: @user, book: @book } %>
+   </dev>
+   <dev class="col-md-8 offset-md-1">
+    <h2>Books</h2>
+    <table class="table table-hover table-inverse">
+    <thead>
+        <tr>
+          <th colspan="0"></th>
+          <th>Title</th>
+          <th>Opinion</th>
+        </tr>
+    </thead>
+    
+     <tbody>
+    <% @userbook.each do |book| %>
+        <tr>
+          <td>
+          <%= link_to user_path(@user) do %>
+           <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+          <% end %>
+          </td>
+          <td>
+            <%= link_to book_path(book.id) do %>
+            <%= book.title %>
+            <% end %>
+            </td>
+          <td><%= book.body %></td>
+        </tr>
+   
+    <% end %>
+     </tbody>
+    </dev>
+   </dev>
+  </dev>
+</main>
 
-  <!--ログイン後のほぼ共通パーツ　ここまで-->
 
+  
