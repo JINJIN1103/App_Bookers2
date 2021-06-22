@@ -1,13 +1,13 @@
 <main>
-<dev class="container px-5 px-sm-0">
-  <dev class="row">
-   <dev class="col-md-3">
+<div class="container px-5 px-sm-0">
+  <div class="row">
+   <div class="col-md-3">
      <%= render partial: 'users/sidebar', locals: { user: @user, book: @book } %>
-   </dev>
+   </div>
 
 
 
-  <dev class="col-md-8 offset-md-1">
+  <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
     <table class="table">
     <tbody>
@@ -38,7 +38,8 @@
             <div class=row><%= link_to "Destroy", book_path(params[:id]), method: :delete ,data: { confirm: '本当に消しますか？' } %></div>
             <% end %>
           </td>
-
+    </tbody>
+    </table>
         </tr>
 </div>
 </div>

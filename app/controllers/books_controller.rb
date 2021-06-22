@@ -3,6 +3,7 @@ class BooksController < ApplicationController
      @book = Book.new
      @user = current_user
      @books = Book.all
+
      #@users = Book.find(user_id)
   end
 

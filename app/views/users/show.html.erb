@@ -1,10 +1,9 @@
-<main>
-<dev class="container px-5 px-sm-0">
-  <dev class="row">
-   <dev class="col-md-3">
+<div class="container px-5 px-sm-0">
+  <div class="row">
+   <div class="col-md-3">
      <%= render partial: 'users/sidebar', locals: { user: @user, book: @book } %>
-   </dev>
-   <dev class="col-md-8 offset-md-1">
+   </div>
+   <div class="col-md-8 offset-md-1">
     <h2>Books</h2>
     <table class="table table-hover table-inverse">
     <thead>
@@ -14,7 +13,6 @@
           <th>Opinion</th>
         </tr>
     </thead>
-    
      <tbody>
     <% @userbook.each do |book| %>
         <tr>
@@ -30,13 +28,12 @@
             </td>
           <td><%= book.body %></td>
         </tr>
-   
     <% end %>
+    </table>
      </tbody>
-    </dev>
-   </dev>
-  </dev>
-</main>
+    </div>
+   </div>
+  </div>
 
 
-  
+
