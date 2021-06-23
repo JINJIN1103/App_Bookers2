@@ -13,7 +13,14 @@
    <header>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
        <div class="container">
-       <%= link_to("Bookers","/",  {class: "navbar-brand"}) %>
+       
+       <a href="/">
+         <span class="navbar-brand">Bookers</span>
+       </a>
+       
+       <!--要件にaタグで書くよう指示があったためコメントアウトし上記aタグ作成-->
+       <%# link_to("Bookers","/",  {class: "navbar-brand"}) %>
+       
        <div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto">
     <% if user_signed_in? %>
@@ -53,7 +60,7 @@
     <% flash.each do |message_type, message|%>
     <%= content_tag :div, message, class: message_type %>
     <% end %>
-    <p id="notic"></p>
+    <p id="notice"></p>
       <%= yield %>
     </main>
      

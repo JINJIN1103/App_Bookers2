@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
@@ -26,9 +26,6 @@ li {
   list-style: none;
 }
 
-label{
-    display:block
-}
 
 body {
     margin: 0;
@@ -54,4 +51,17 @@ body {
 
 .notice {
     color: green;
+}
+
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+
+label{
+    display:block
+}
+
+label.home{
+    display: inline-block;
+    margin-bottom: 0.5rem;
 }
