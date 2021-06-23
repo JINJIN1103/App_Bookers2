@@ -1,5 +1,17 @@
 <main>
 <div class="container px-5 px-sm-0">
+
+  <% if @book.errors.any? %>
+  <div class="error_explanation">
+    <h2><%= @book.errors.count %> error prohibited this obj from being saved:</h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+  </div>
+  <% end %>
+
   <div class="row">
    <div class="col-md-3">
      <%= render partial: 'users/sidebar', locals: { user: @user, book: @book } %>
